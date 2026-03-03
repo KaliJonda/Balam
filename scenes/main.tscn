@@ -2,9 +2,17 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sgp6g"]
+
 [node name="main" type="Node3D" unique_id=837211833]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=518139089]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=245587267]
 mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=920159323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5977167, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2" unique_id=1176712476]
+mesh = SubResource("CapsuleMesh_sgp6g")
