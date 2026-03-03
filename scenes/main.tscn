@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://drwlpyunkoq53"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
+
+[node name="main" type="Node3D" unique_id=837211833]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=518139089]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=245587267]
+mesh = SubResource("BoxMesh_sgp6g")
