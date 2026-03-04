@@ -1,18 +1,36 @@
 [gd_scene format=3 uid="uid://drwlpyunkoq53"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
+[ext_resource type="Material" uid="uid://bd0nbmfml1gug" path="res://textures/floor_UV_testmap.tres" id="1_o5qli"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sgp6g"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_0wfyh"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_sugp2"]
+map_width = 21
+map_depth = 21
+map_data = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="main" type="Node3D" unique_id=837211833]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=518139089]
+[node name="Camera" type="Camera3D" parent="." unique_id=306850058]
+transform = Transform3D(1, 0, 0, 0, 0.98578286, 0.16802481, 0, -0.16802481, 0.98578286, 9.564705, 1.3738332, 16.462881)
+fov = 90.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=245587267]
-mesh = SubResource("BoxMesh_sgp6g")
+[node name="Ambient Light" type="DirectionalLight3D" parent="." unique_id=2133051047]
+transform = Transform3D(1, 0, 0, 0, 0.69578743, 0.7182478, 0, -0.7182478, 0.69578743, 1.5696354, 3.0280182, 7.1920085)
+light_bake_mode = 1
+directional_shadow_mode = 1
 
-[node name="RigidBody3D2" type="RigidBody3D" parent="." unique_id=920159323]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5977167, 0, 0)
+[node name="Floor" type="RigidBody3D" parent="." unique_id=759151039]
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2" unique_id=1176712476]
-mesh = SubResource("CapsuleMesh_sgp6g")
+[node name="floor_mesh" type="MeshInstance3D" parent="Floor" unique_id=524283028]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 10, 0, 10)
+material_override = ExtResource("1_o5qli")
+mesh = SubResource("PlaneMesh_0wfyh")
+
+[node name="floor_collider" type="CollisionShape3D" parent="Floor" unique_id=1160275331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+visible = false
+shape = SubResource("HeightMapShape3D_sugp2")
