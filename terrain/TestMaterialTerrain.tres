@@ -1,10 +1,10 @@
 [gd_resource type="Terrain3DMaterial" format=3 uid="uid://e0b6elsvavxm"]
 
-[sub_resource type="Gradient" id="Gradient_kbmr5"]
+[sub_resource type="Gradient" id="Gradient_74s1o"]
 offsets = PackedFloat32Array(0.2, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_w3uoq"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5jmd5"]
 noise_type = 2
 frequency = 0.03
 cellular_jitter = 3.0
@@ -16,9 +16,9 @@ domain_warp_fractal_type = 2
 domain_warp_fractal_lacunarity = 1.5
 domain_warp_fractal_gain = 1.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o3i6r"]
-noise = SubResource("FastNoiseLite_w3uoq")
-color_ramp = SubResource("Gradient_kbmr5")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x0qao"]
+noise = SubResource("FastNoiseLite_5jmd5")
+color_ramp = SubResource("Gradient_74s1o")
 seamless = true
 
 [resource]
@@ -37,6 +37,6 @@ _shader_parameters = {
 &"noise1_offset": Vector2(0.5, 0.5),
 &"noise1_scale": 0.04,
 &"noise2_scale": 0.076,
-&"noise_texture": SubResource("NoiseTexture2D_o3i6r"),
+&"noise_texture": SubResource("NoiseTexture2D_x0qao"),
 &"projection_threshold": 0.8
 }

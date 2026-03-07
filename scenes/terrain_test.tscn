@@ -26,21 +26,22 @@ glow_enabled = true
 environment = SubResource("Environment_nonsf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=201292902]
-transform = Transform3D(-0.99965733, -0.022669906, 0.013088475, 0, 0.49999997, 0.86602545, -0.026176952, 0.8657287, -0.49982864, 0, 0, 0)
+transform = Transform3D(-0.99965733, -0.022669908, 0.013088475, 0.013590839, -0.022149477, 0.99966246, -0.022372346, 0.9994977, 0.022449985, 0.6064873, 2.384665, -24.282078)
+light_bake_mode = 1
 shadow_enabled = true
 
-[node name="Terrain3D" type="Terrain3D" parent="." unique_id=28136790]
-data_directory = "res://terrain"
-material = ExtResource("1_o3i6r")
-assets = ExtResource("2_chm2y")
-top_level = true
-metadata/_edit_lock_ = true
-
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=316275287]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59945625, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029554367, 0.59945625, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1736374027]
 mesh = SubResource("BoxMesh_yemdp")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1847683651]
-transform = Transform3D(0.9999987, 0.0005446099, -0.00151987, -0.00054329186, 0.9999995, 0.00086747954, 0.0015203415, -0.0008666527, 0.9999985, 0, 0.9446565, 3.660881)
+transform = Transform3D(0.9999987, 0.0005446099, -0.00151987, -0.00054329186, 0.9999995, 0.00086747954, 0.0015203415, -0.0008666527, 0.9999985, -7.6092796, 0.9446565, -4.3501167)
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1371373195]
+data_directory = "res://terrain"
+material = ExtResource("1_o3i6r")
+assets = ExtResource("2_chm2y")
+top_level = true
+metadata/_edit_lock_ = true
