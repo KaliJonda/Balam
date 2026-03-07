@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Balam"
-run/main_scene="uid://drwlpyunkoq53"
+run/main_scene="uid://cl0rgh5xkvf60"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="Balam"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 [physics]
 
