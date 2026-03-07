@@ -2,7 +2,7 @@
 
 [ext_resource type="Terrain3DMaterial" uid="uid://e0b6elsvavxm" path="res://terrain/TestMaterialTerrain.tres" id="1_o3i6r"]
 [ext_resource type="Terrain3DAssets" uid="uid://qd6dtnr7ra30" path="res://terrain/TestAssetsTerrain.tres" id="2_chm2y"]
-[ext_resource type="Script" uid="uid://dwti4pm5u7pm7" path="res://scenes/character_body_3d.gd" id="3_chm2y"]
+[ext_resource type="Script" path="res://scenes/character_body_3d.gd" id="3_chm2y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3i6r"]
 sky_top_color = Color(0.23440796, 0.5796786, 0.81677026, 1)
