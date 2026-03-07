@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Balam"
-run/main_scene="uid://cl0rgh5xkvf60"
+run/main_scene="uid://chol2xlfbq7cu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3
 
 [dotnet]
 
