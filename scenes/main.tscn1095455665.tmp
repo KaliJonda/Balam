@@ -22,15 +22,19 @@ transform = Transform3D(1, 0, 0, 0, 0.69578743, 0.7182478, 0, -0.7182478, 0.6957
 light_bake_mode = 1
 directional_shadow_mode = 1
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=2018319451]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+[node name="Floor" type="RigidBody3D" parent="." unique_id=759151039]
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
 
 [node name="floor_mesh" type="MeshInstance3D" parent="Floor" unique_id=524283028]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 10, 0, 10)
 material_override = ExtResource("1_o5qli")
 mesh = SubResource("PlaneMesh_0wfyh")
 
 [node name="floor_collider" type="CollisionShape3D" parent="Floor" unique_id=1160275331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+visible = false
 shape = SubResource("HeightMapShape3D_sugp2")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=784999822]
