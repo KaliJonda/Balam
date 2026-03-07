@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://drwlpyunkoq53"]
 
-[ext_resource type="Material" uid="uid://bd0nbmfml1gug" path="res://textures/floor_UV_testmap.tres" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://dwti4pm5u7pm7" path="res://scenes/character_body_3d.gd" id="2_0wfyh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o5qli"]
+load_path = "res://.godot/imported/texture_test.png-da1c3fcc93d0839689a6606d47eebde3.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_texture = SubResource("CompressedTexture2D_o5qli")
+uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0wfyh"]
 
@@ -29,7 +35,7 @@ freeze = true
 
 [node name="floor_mesh" type="MeshInstance3D" parent="Floor" unique_id=524283028]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 10, 0, 10)
-material_override = ExtResource("1_o5qli")
+material_override = SubResource("StandardMaterial3D_0wfyh")
 mesh = SubResource("PlaneMesh_0wfyh")
 
 [node name="floor_collider" type="CollisionShape3D" parent="Floor" unique_id=1160275331]
