@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Balam"
-run/main_scene="uid://bo72xi0eensyr"
+run/main_scene="uid://cl0rgh5xkvf60"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -70,9 +70,9 @@ anti_aliasing/screen_space_roughness_limiter/enabled=false
 
 resolution={
 "type": "vec2",
-"value": Vector2(320, 240)
+"value": Vector2(426, 240)
 }
 color_depth={
 "type": "float",
-"value": 64.0
+"value": 32.0
 }

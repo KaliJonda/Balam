@@ -1,4 +1,4 @@
-[gd_resource type="Environment" format=3 uid="uid://ubdjqm81h2l5"]
+[gd_resource type="Environment" format=3 uid="uid://dt3jm5jqb80ca"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_58e76"]
 ground_color = Color(0.0885599, 0.08855992, 0.08855987, 1)
@@ -9,6 +9,7 @@ sky_material = SubResource("PhysicalSkyMaterial_58e76")
 [resource]
 background_mode = 2
 sky = SubResource("Sky_imojm")
+ambient_light_color = Color(2.4065375e-06, 0.54202557, 0.65180516, 1)
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true

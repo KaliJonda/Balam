@@ -1,36 +1,39 @@
 [gd_scene format=3 uid="uid://cl0rgh5xkvf60"]
 
+[ext_resource type="Environment" uid="uid://dt3jm5jqb80ca" path="res://terrain/test_enviroment_config.tres" id="1_4kj3c"]
 [ext_resource type="Terrain3DMaterial" uid="uid://e0b6elsvavxm" path="res://terrain/TestMaterialTerrain.tres" id="1_o3i6r"]
 [ext_resource type="Terrain3DAssets" uid="uid://qd6dtnr7ra30" path="res://terrain/TestAssetsTerrain.tres" id="2_chm2y"]
 [ext_resource type="Script" uid="uid://fj8q4rlgf3b6" path="res://scripts/character_movement.gd" id="3_chm2y"]
+[ext_resource type="Shader" uid="uid://de5bdd6ksadmc" path="res://shaders/post_processing.gdshader" id="4_nonsf"]
+[ext_resource type="Texture2D" uid="uid://btq5qv21vjdui" path="res://textures/texture_test_test.dds" id="6_yemdp"]
+[ext_resource type="Script" path="res://scripts/cube_movement.gd" id="7_8bl1q"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o3i6r"]
-sky_top_color = Color(0.23440796, 0.5796786, 0.81677026, 1)
-sky_horizon_color = Color(0.8143473, 0.9407687, 1.1698949, 1)
-ground_bottom_color = Color(0.16017205, 0.32058725, 1, 1)
-ground_horizon_color = Color(0.8143473, 0.9407687, 1.1698949, 1)
+[sub_resource type="QuadMesh" id="QuadMesh_4kj3c"]
+size = Vector2(2, 2)
 
-[sub_resource type="Sky" id="Sky_chm2y"]
-sky_material = SubResource("ProceduralSkyMaterial_o3i6r")
-
-[sub_resource type="Environment" id="Environment_nonsf"]
-background_mode = 2
-sky = SubResource("Sky_chm2y")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn066"]
+render_priority = 0
+shader = ExtResource("4_nonsf")
+shader_parameter/dither_amount = 0.3499999921768
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nonsf"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4kj3c"]
 points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bl1q"]
+albedo_texture = ExtResource("6_yemdp")
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5bdu"]
+
 [node name="terrain_test" type="Node3D" unique_id=250920712]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=209160866]
-environment = SubResource("Environment_nonsf")
+environment = ExtResource("1_4kj3c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=201292902]
-transform = Transform3D(-0.99965733, -0.022669908, 0.013088475, 0.013590839, -0.022149477, 0.99966246, -0.022372346, 0.9994977, 0.022449985, 0.6064873, 2.384665, -24.282078)
+transform = Transform3D(-0.9996574, -0.022669906, 0.013088472, -0.0019285465, 0.56242245, 0.8268479, -0.026105814, 0.8265394, -0.56227326, 0.6064873, 2.384665, -3.5756016)
+light_energy = 3.0
 light_bake_mode = 1
 shadow_enabled = true
 
@@ -41,6 +44,12 @@ assets = ExtResource("2_chm2y")
 top_level = true
 metadata/_edit_lock_ = true
 
+[node name="PostProcessing" type="MeshInstance3D" parent="." unique_id=1676219997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4486549, 0)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_4kj3c")
+surface_material_override/0 = SubResource("ShaderMaterial_xn066")
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1755348229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("3_chm2y")
@@ -49,9 +58,17 @@ script = ExtResource("3_chm2y")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head" unique_id=120911708]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4486549, 0)
+fov = 65.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=323966439]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_nonsf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1246355744]
 shape = SubResource("ConvexPolygonShape3D_4kj3c")
+
+[node name="cube" type="MeshInstance3D" parent="." unique_id=1367805793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2643626, 1.3577744, 0)
+material_override = SubResource("StandardMaterial3D_8bl1q")
+mesh = SubResource("BoxMesh_t5bdu")
+script = ExtResource("7_8bl1q")
