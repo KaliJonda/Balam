@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1g5gmndhdwwh" path="res://textures/terrain_placeholder_texture_albedo+height.dds" id="1_58e76"]
 [ext_resource type="Environment" uid="uid://ubdjqm81h2l5" path="res://terrain/test_enviroment_config.tres" id="1_imojm"]
 [ext_resource type="Shader" uid="uid://de5bdd6ksadmc" path="res://shaders/post_processing.gdshader" id="1_mypnl"]
-[ext_resource type="Script" uid="uid://o27lvp2t54so" path="res://scripts/cube.gd" id="3_ffa5r"]
+[ext_resource type="Script" uid="uid://o27lvp2t54so" path="res://scripts/cube_movement.gd" id="3_ffa5r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffa5r"]
 albedo_color = Color(0.26657522, 0.2665752, 0.2665752, 1)
