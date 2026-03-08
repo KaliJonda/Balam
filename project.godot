@@ -11,15 +11,14 @@ config_version=5
 [application]
 
 config/name="Balam"
-run/main_scene="uid://chol2xlfbq7cu"
+run/main_scene="uid://bo72xi0eensyr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1980
-window/size/viewport_height=1080
-window/size/mode=3
+window/size/viewport_width=1280
+window/size/viewport_height=960
 
 [dotnet]
 
@@ -36,3 +35,16 @@ enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+shading/overrides/force_vertex_shading=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+
+[shader_globals]
+
+resolution={
+"type": "vec2",
+"value": Vector2(320, 240)
+}
+color_depth={
+"type": "float",
+"value": 64.0
+}
