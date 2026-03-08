@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bo72xi0eensyr"]
+
+[ext_resource type="Texture2D" uid="uid://d1g5gmndhdwwh" path="res://textures/terrain_placeholder_texture_albedo+height.dds" id="1_58e76"]
+[ext_resource type="Environment" uid="uid://ubdjqm81h2l5" path="res://terrain/test_enviroment_config.tres" id="1_imojm"]
+[ext_resource type="Shader" uid="uid://de5bdd6ksadmc" path="res://shaders/post_processing.gdshader" id="1_mypnl"]
+[ext_resource type="Script" uid="uid://o27lvp2t54so" path="res://scripts/cube_movement.gd" id="3_ffa5r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffa5r"]
+albedo_color = Color(0.26657522, 0.2665752, 0.2665752, 1)
+metallic = 0.2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_danse"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_mypnl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imojm"]
+albedo_texture = ExtResource("1_58e76")
+
+[sub_resource type="BoxMesh" id="BoxMesh_58e76"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_imojm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58e76"]
+render_priority = 0
+shader = ExtResource("1_mypnl")
+shader_parameter/dither_amount = 0.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_imojm"]
+size = Vector2(2, 2)
+
+[node name="Dithering_test" type="Node3D" unique_id=1315120602]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=898391298]
+environment = ExtResource("1_imojm")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=485364738]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ffa5r")
+mesh = SubResource("PlaneMesh_danse")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1578353324]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=762049637]
+shape = SubResource("HeightMapShape3D_mypnl")
+
+[node name="cube" type="MeshInstance3D" parent="." unique_id=1921382570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+material_override = SubResource("StandardMaterial3D_imojm")
+mesh = SubResource("BoxMesh_58e76")
+script = ExtResource("3_ffa5r")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="cube" unique_id=194758847]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube/RigidBody3D" unique_id=619883800]
+shape = SubResource("BoxShape3D_imojm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1064986781]
+transform = Transform3D(0.9224101, 0.21241648, 0.32255062, -0.38621196, 0.50732535, 0.7703644, 0, -0.8351648, 0.5499998, 0, 4, 0)
+light_energy = 3.0
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1542147693]
+transform = Transform3D(1, 0, 0, 0, 0.78934133, 0.6139546, 0, -0.6139546, 0.78934133, -0.02837038, 2.8571868, 3.1228557)
+
+[node name="PostProcessing" type="MeshInstance3D" parent="Camera3D" unique_id=925505000]
+transform = Transform3D(1, 0, 0, 0, 0.78934133, -0.6139546, 0, 0.6139546, 0.78934133, 0.02837038, -0.33800387, -4.219182)
+material_override = SubResource("ShaderMaterial_58e76")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_imojm")
