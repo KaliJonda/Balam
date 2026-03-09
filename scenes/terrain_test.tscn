@@ -46,6 +46,7 @@ metadata/_edit_lock_ = true
 
 [node name="PostProcessing" type="MeshInstance3D" parent="." unique_id=1676219997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4486549, 0)
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_4kj3c")
 surface_material_override/0 = SubResource("ShaderMaterial_xn066")
