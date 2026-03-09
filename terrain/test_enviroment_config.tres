@@ -1,15 +1,18 @@
 [gd_resource type="Environment" format=3 uid="uid://dt3jm5jqb80ca"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_58e76"]
-ground_color = Color(0.0885599, 0.08855992, 0.08855987, 1)
+[ext_resource type="Shader" uid="uid://prtddhpghaqx" path="res://shaders/sky_shader.tres" id="1_qm2iu"]
+[ext_resource type="Texture2D" uid="uid://jbehia0l74gv" path="res://textures/sky_texture_test.dds" id="2_u4t7h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fv2ub"]
+shader = ExtResource("1_qm2iu")
+shader_parameter/sky_texture = ExtResource("2_u4t7h")
 
 [sub_resource type="Sky" id="Sky_imojm"]
-sky_material = SubResource("PhysicalSkyMaterial_58e76")
+sky_material = SubResource("ShaderMaterial_fv2ub")
 
 [resource]
 background_mode = 2
 sky = SubResource("Sky_imojm")
-ambient_light_color = Color(2.4065375e-06, 0.54202557, 0.65180516, 1)
 ssao_enabled = true
 ssil_enabled = true
 sdfgi_enabled = true
