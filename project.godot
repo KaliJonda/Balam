@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Balam"
-run/main_scene="uid://cl0rgh5xkvf60"
+run/main_scene="uid://cv4fhwmqxe1bc"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -63,6 +63,9 @@ jump={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+lights_and_shadows/directional_shadow/size=2048
+lights_and_shadows/directional_shadow/size.mobile=1024
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
 shading/overrides/force_vertex_shading=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 
@@ -74,5 +77,5 @@ resolution={
 }
 color_depth={
 "type": "float",
-"value": 32.0
+"value": 128.0
 }

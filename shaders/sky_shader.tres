@@ -17,6 +17,7 @@ flags/use_half_res_pass = false
 flags/use_quarter_res_pass = false
 flags/disable_fog = false
 flags/use_debanding = false
+nodes/sky/0/position = Vector2(400, 140)
 nodes/sky/2/node = SubResource("VisualShaderNodeTexture2DParameter_lwuxc")
 nodes/sky/2/position = Vector2(-440, 120)
 nodes/sky/3/node = SubResource("VisualShaderNodeTexture_vkxwk")

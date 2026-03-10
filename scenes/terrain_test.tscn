@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cl0rgh5xkvf60"]
 
-[ext_resource type="Environment" uid="uid://dt3jm5jqb80ca" path="res://terrain/test_enviroment_config.tres" id="1_4kj3c"]
+[ext_resource type="Environment" uid="uid://dt3jm5jqb80ca" path="res://terrain/test_envyronment_config.tres" id="1_4kj3c"]
 [ext_resource type="Terrain3DMaterial" uid="uid://e0b6elsvavxm" path="res://terrain/TestMaterialTerrain.tres" id="1_o3i6r"]
 [ext_resource type="Terrain3DAssets" uid="uid://qd6dtnr7ra30" path="res://terrain/TestAssetsTerrain.tres" id="2_chm2y"]
 [ext_resource type="Script" uid="uid://fj8q4rlgf3b6" path="res://scripts/character_movement.gd" id="3_chm2y"]
@@ -14,7 +14,7 @@ size = Vector2(2, 2)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xn066"]
 render_priority = 0
 shader = ExtResource("4_nonsf")
-shader_parameter/dither_amount = 0.3499999921768
+shader_parameter/dither_amount = 0.6499999854712
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nonsf"]
 

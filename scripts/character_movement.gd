@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+@export var SPEED: float = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 
 @onready var head = $Head
-@onready var camera = $Head/Camera3D
+@onready var camera = $Head/Player_camera
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
